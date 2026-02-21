@@ -8,6 +8,7 @@ import {
 import Button from '../components/Button.jsx';
 import threeStar from '../assets/imgs/z-ball3.png';
 import oneStar from '../assets/imgs/z-ball.png';
+import Tilt from 'react-parallax-tilt';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/all';
