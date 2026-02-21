@@ -44,17 +44,12 @@ export default function Story() {
                     {/* Label */}
                     <p className="text-xs uppercase tracking-widest text-white/50 mb-4">Dragon Ball Z</p>
 
-                    {/* Layered title */}
-                    <div id="story-title" className="relative w-full flex justify-center">
-                        {/* Overlay (mix-blend) */}
-                        <h2 className="z-10 font-zentry sm:mt-17 uppercase text-center md:text-[6rem] leading-[.8] text-4xl special-font mix-blend-overlay absolute">
-                            th<b>e</b> St<b>o</b>ry<br /> o<b>f</b> <b>7-</b><b>d</b>rag<b>o</b>n <b>balls</b>
-                        </h2>
-                        {/* Base text */}
-                        <h2 className="font-zentry mt-7 sm:mt-22 uppercase text-center md:text-[6rem] leading-[.8] text-4xl special-font">
-                            th<b>e</b> St<b>o</b>ry<br /> o<b>f</b> <b>7-</b><b>d</b>rag<b>o</b>n <b>balls</b>
-                        </h2>
-                    </div>
+                    <h2
+                        id="story-title"
+                        className="font-zentry mt-7 sm:mt-22 uppercase text-center md:text-[6rem] leading-[.8] text-4xl special-font drop-shadow-[0_12px_24px_rgba(0,0,0,0.45)]"
+                    >
+                        th<b>e</b> St<b>o</b>ry<br /> o<b>f</b> <b>7-</b><b>d</b>rag<b>o</b>n <b>balls</b>
+                    </h2>
 
                     {/* Tilt image */}
                     <Tilt tiltMaxAngleX={12} tiltMaxAngleY={12} className="mt-10 w-full max-w-3xl mx-auto">
@@ -75,14 +70,9 @@ export default function Story() {
                             <p className="text-left text-violet-50 font-circularweb text-sm sm:text-base leading-relaxed">
                                 The seven Dragon Balls are magical orbs that, when gathered, summon a dragon to grant any wish before scattering across the world again.
                             </p>
-                            <div className="w-fit rounded-full px-7 py-3 bg-violet-50 text-black cursor-pointer text-xs uppercase font-black group overflow-hidden">
-                                <div className="relative">
-                                    <div className="translate-y-0 skew-y-0 transition duration-500 group-hover:-translate-y-9 group-hover:skew-y-12">
-                                        Discover Story
-                                    </div>
-                                    <div className="absolute inset-0 translate-y-5 skew-y-12 transition duration-500 group-hover:-translate-y-4 group-hover:skew-y-0">
-                                        Discover Story
-                                    </div>
+                            <div className="w-fit rounded-full px-7 py-3 bg-violet-50 text-black cursor-pointer text-xs uppercase font-black group">
+                                <div className="transition-transform duration-300 group-hover:-translate-y-0.5">
+                                    Discover Story
                                 </div>
                             </div>
                         </div>

@@ -164,16 +164,11 @@ export default function Hero() {
 
         {/* Bottom-right text (foreground) */}
         <div className="absolute bottom-0 right-0 z-40 mb-5 px-10">
-          <h1 className="opacity-90 special-font uppercase font-zentry z-40 lg:text-[12rem] text-7xl sm:text-9xl">
+          <h1 className="opacity-90 special-font uppercase font-zentry z-40 lg:text-[12rem] text-7xl sm:text-9xl drop-shadow-[0_12px_20px_rgba(0,0,0,0.5)]">
             b<b>a</b>ll
           </h1>
         </div>
       </div>
-
-      {/* Bottom-right text (shadow layer) */}
-      <h1 className="special-font z-0 uppercase font-zentry font-black lg:text-[12rem] mb-5 px-10 text-7xl sm:text-9xl leading-none absolute bottom-0 right-0 text-black">
-        b<b>a</b>ll
-      </h1>
     </div>
   );
 }

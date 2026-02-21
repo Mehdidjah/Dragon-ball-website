@@ -81,15 +81,15 @@ export default function Glance() {
               <div
                 key={id}
                 id={id}
-                className={`relative w-64 h-64 sm:w-80 sm:h-80 overflow-hidden perspective-dramatic group cursor-pointer ${cls}`}
+                className={`relative w-64 h-64 sm:w-80 sm:h-80 overflow-hidden perspective-dramatic group cursor-pointer transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 ${cls}`}
               >
                 <img
                   src={src}
                   alt={name}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover scale-105 transition-transform duration-700 ease-out group-hover:scale-110"
                 />
                 {/* Name badge on hover */}
-                <div className="absolute bottom-0 left-0 right-0 py-3 px-4 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-0 left-0 right-0 py-3 px-4 bg-gradient-to-t from-black/80 to-transparent opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
                   <p className="text-white text-sm font-robert-medium uppercase tracking-widest">{name}</p>
                 </div>
               </div>

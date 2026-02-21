@@ -43,14 +43,9 @@ export default function Contact() {
             className="w-28 sm:w-34 mt-10 drop-shadow-2xl"
           />
 
-          <div className="w-fit rounded-full px-7 py-3 mt-7 bg-violet-50 text-black cursor-pointer text-xs uppercase font-black group overflow-hidden hover:shadow-lg hover:shadow-violet-500/30 transition-shadow duration-300">
-            <div className="relative">
-              <div className="translate-y-0 skew-y-0 transition duration-500 group-hover:-translate-y-9 group-hover:skew-y-12">
-                Become a hero
-              </div>
-              <div className="absolute inset-0 translate-y-5 skew-y-12 transition duration-500 group-hover:-translate-y-4 group-hover:skew-y-0">
-                Become a hero
-              </div>
+          <div className="w-fit rounded-full px-7 py-3 mt-7 bg-violet-50 text-black cursor-pointer text-xs uppercase font-black group hover:shadow-lg hover:shadow-violet-500/30 transition-shadow duration-300">
+            <div className="transition-transform duration-300 group-hover:-translate-y-0.5">
+              Become a hero
             </div>
           </div>
         </div>
