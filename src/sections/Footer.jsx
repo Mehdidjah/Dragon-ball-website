@@ -6,9 +6,9 @@ export default function Footer() {
           &copy; {new Date().getFullYear()} Dragon Ball Z. All rights reserved.
         </p>
         <p className="text-center text-xs text-white/60">
-          Made with ❤️ by <span className="text-white font-semibold">Mehdi</span>
+          Made by <span className="text-white font-semibold"> <a href="https://github.com/Mehdidjah">Mehdi </a></span>
         </p>
       </div>
-    </footer>
+    </footer >
   );
 }
