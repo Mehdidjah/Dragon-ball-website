@@ -93,6 +93,7 @@ export function SmoothCursor({
   const lastUpdateTime = useRef(Date.now())
   const previousAngle = useRef(0)
   const accumulatedRotation = useRef(0)
+  const settleTimeoutRef = useRef<number | null>(null)
 
   const cursorX = useSpring(0, springConfig)
   const cursorY = useSpring(0, springConfig)
@@ -108,6 +109,14 @@ export function SmoothCursor({
   })
 
   useEffect(() => {
+    const initialPos = {
+      x: window.innerWidth / 2,
+      y: window.innerHeight / 2,
+    }
+    cursorX.set(initialPos.x)
+    cursorY.set(initialPos.y)
+    lastMousePos.current = initialPos
+
     const updateVelocity = (currentPos: Position) => {
       const currentTime = Date.now()
       const deltaTime = currentTime - lastUpdateTime.current
@@ -149,12 +158,14 @@ export function SmoothCursor({
         scale.set(0.95)
         setIsMoving(true)
 
-        const timeout = setTimeout(() => {
+        if (settleTimeoutRef.current) {
+          clearTimeout(settleTimeoutRef.current)
+        }
+
+        settleTimeoutRef.current = window.setTimeout(() => {
           scale.set(1)
           setIsMoving(false)
         }, 150)
-
-        return () => clearTimeout(timeout)
       }
     }
 
@@ -169,12 +180,13 @@ export function SmoothCursor({
     }
 
     document.body.style.cursor = "none"
-    window.addEventListener("mousemove", throttledMouseMove)
+    window.addEventListener("pointermove", throttledMouseMove)
 
     return () => {
-      window.removeEventListener("mousemove", throttledMouseMove)
+      window.removeEventListener("pointermove", throttledMouseMove)
       document.body.style.cursor = "auto"
       if (rafId) cancelAnimationFrame(rafId)
+      if (settleTimeoutRef.current) clearTimeout(settleTimeoutRef.current)
     }
   }, [cursorX, cursorY, rotation, scale])
 
