@@ -94,21 +94,31 @@ export default function Hero() {
       <div className="relative w-full h-full z-50" id="hero">
         <div className="relative w-full h-full">
           {/* Clickable video preview (next video in dragon-ball mask) */}
-          <div className="absolute top-0 left-0 size-64 z-40 w-full h-full overflow-hidden">
+          <div className="absolute top-0 left-0 size-64 z-40 w-full h-full overflow-hidden flex items-center justify-center">
             <div
-              className="absolute z-[60] size-64 cursor-pointer pointer-events-auto inset-0 m-auto
-              opacity-0 hover:opacity-100 scale-50 hover:scale-100 transition-all duration-300 ease-in
-              mask-[url('/src/assets/imgs/z-ball3cut.png')] mask-no-repeat mask-cover"
+              className="relative z-[60] size-64 cursor-pointer scale-50 hover:scale-100 transition-all duration-500 ease-out group/card"
               onClick={handleVideoClick}
             >
-              <video
-                src={videos[(videoIndex + 1) % videos.length]}
-                id="current-video"
-                className="w-full h-full object-cover origin-center"
-                muted
-                loop
-                playsInline
-              />
+              <Tilt
+                tiltMaxAngleX={20}
+                tiltMaxAngleY={20}
+                perspective={1000}
+                scale={1.1}
+                className="size-full overflow-hidden rounded-full border-4 border-yellow-400/50 shadow-[0_0_50px_rgba(250,204,21,0.3)] hover:shadow-[0_0_80px_rgba(250,204,21,0.6)] transition-shadow duration-500 animate-pulse-subtle"
+              >
+                <div
+                  className="size-full mask-[url('/src/assets/imgs/z-ball3cut.png')] mask-no-repeat mask-cover opacity-0 hover:opacity-100 transition-opacity duration-300 bg-black/20"
+                >
+                  <video
+                    src={videos[(videoIndex + 1) % videos.length]}
+                    id="current-video"
+                    className="size-full object-cover origin-center"
+                    muted
+                    loop
+                    playsInline
+                  />
+                </div>
+              </Tilt>
             </div>
           </div>
         </div>

@@ -11,10 +11,10 @@ export default function Button({ title, image, containerClass, onClick }) {
     >
       {image && <img src={image} alt="" className="w-4 shrink-0" />}
       <span className="relative inline-block overflow-hidden">
-        <span className="block transition-transform duration-300 group-hover:-translate-y-full group-hover:skew-y-12">
+        <span className="block transition-transform duration-500 group-hover:-translate-y-full group-hover:skew-y-6">
           {title}
         </span>
-        <span className="absolute inset-0 translate-y-full skew-y-12 transition-transform duration-300 group-hover:translate-y-0 group-hover:skew-y-0">
+        <span className="absolute inset-0 translate-y-full skew-y-6 transition-transform duration-500 group-hover:translate-y-0 group-hover:skew-y-0">
           {title}
         </span>
       </span>
